@@ -94,6 +94,7 @@
     --fw-semibold: 600;
     --fw-bold: 700;
 
+    --spacing-50: 0.5rem;
     --spacing-100: 1rem;
     --spacing-200: 1.5rem;
     --spacing-300: 2rem;
@@ -110,6 +111,7 @@
     --line-height-m: 1.4;
 
     --letter-spacing-1: 0.016em;
+    --letter-spacing-2: 0.25em;
 
     /* Semantic Layer */
     /* in another selector for syntax highlighting reasons only */
@@ -170,7 +172,19 @@
     min-block-size: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 6rem;
+  }
+
+  @media (max-width: 761px) {
+    .cover {
+      padding: var(--spacing-480);
+    }
+  }
+
+  @media (max-width: 455px) {
+    .cover {
+      padding: var(--spacing-100);
+    }
   }
 
   .box {
@@ -283,10 +297,6 @@
 @layer utilities {
   .justify\:between {
     justify-content: space-between;
-  }
-
-  .align\:center {
-    align-items: center;
   }
 
   .direction\:column {
