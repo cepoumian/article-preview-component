@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope", Arial, sans-serif;
   src: url("/assets/fonts/manrope/Manrope-VariableFont_wght.ttf");
   font-display: swap;
 }
@@ -291,6 +291,31 @@
       font-weight: var(--fw-light);
       color: var(--text-light);
     }
+  }
+
+  .tooltip__text {
+    font-size: var(--fs-300);
+    letter-spacing: var(--letter-spacing-2);
+    color: var(--clr-gray-400);
+    font-weight: var(--fw-light);
+  }
+
+  .tooltip__icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tooltip__link {
+    display: block;
+    color: var(--clr-white);
+    text-decoration: none;
+    min-width: 1rem;
+    padding: 0.3rem 0;
+  }
+
+  .tooltip__link:hover {
+    color: var(--clr-gray-400);
   }
 }
 

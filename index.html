@@ -18,7 +18,7 @@
   </head>
   <body>
     <main class="cover bg:light">
-      <div class="container card with-sidebar">
+      <article class="container card with-sidebar">
         <figure>
           <img
             class="bg-image"
@@ -26,7 +26,7 @@
             alt="Picture of green drawers with a base on top"
           />
         </figure>
-        <div class="box">
+        <section class="box">
           <div class="stack">
             <h1 class="article-title">
               Shift the overall look and feel by adding these wonderful touches
@@ -50,12 +50,25 @@
               </div>
               <div class="share">
                 <share-button></share-button>
-                <share-tooltip></share-tooltip>
+                <share-tooltip>
+                  <div class="tooltip__text" slot="text">SHARE</div>
+                  <div class="tooltip__icons" slot="icons">
+                    <a href="#" class="tooltip__link"
+                      ><img src="/assets/images/icon-facebook.svg"
+                    /></a>
+                    <a href="#" class="tooltip__link"
+                      ><img src="/assets/images/icon-twitter.svg"
+                    /></a>
+                    <a href="#" class="tooltip__link"
+                      ><img src="/assets/images/icon-pinterest.svg"
+                    /></a>
+                  </div>
+                </share-tooltip>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </article>
     </main>
   </body>
 </html>

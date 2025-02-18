@@ -22,7 +22,7 @@ template.innerHTML = /* html */ `
       transform: translateY(-2px);
     }
   </style>
-  <div>
+  <div aria-label="Share button">
     <img src="/assets/images/icon-share.svg" />
   </div>
 `;
@@ -36,11 +36,13 @@ class ShareButton extends HTMLElement {
 
   connectedCallback() {
     this.root.appendChild(template.content.cloneNode(true));
-    this.addEventListener("click", this._toggleActive);
-    this.tooltip = document.querySelector("share-tooltip");
+    this.root
+      .querySelector("div")
+      .addEventListener("click", () => this._toggleActive());
+    this.tooltip = this.closest(".share")?.querySelector("share-tooltip");
   }
 
-  _toggleActive() {
+  _toggleActive = () => {
     this._active = !this._active;
     const button = this.root.querySelector("div");
     button.classList.toggle("active", this._active);
@@ -48,7 +50,7 @@ class ShareButton extends HTMLElement {
     if (this.tooltip) {
       this.tooltip.toggleVisibility(this._active);
     }
-  }
+  };
 }
 
 customElements.define("share-button", ShareButton);

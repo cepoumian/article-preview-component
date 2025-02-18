@@ -14,9 +14,10 @@ tooltipTemplate.innerHTML = /* html */ `
       padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
       border-radius: var(--border-radius-1);
       display: none;
+      visibility: hidden;
       opacity: 0;
       transform: translateY(var(--translate-y)) translateX(var(--translate-x));
-      transition: opacity 0.3s ease, display 0s 0.3s;
+      transition: opacity 0.3s ease, visibility 0s 0.3s;
     }
 
     .tooltip::after {
@@ -32,8 +33,9 @@ tooltipTemplate.innerHTML = /* html */ `
 
     .tooltip.show {
       display: flex;
+      visibility: visible;
       opacity: 1;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0s 0.3s;
     }
     
     @media (max-width: 761px) {
@@ -62,38 +64,10 @@ tooltipTemplate.innerHTML = /* html */ `
         border-color: transparent transparent transparent var(--clr-gray-900);
       }
     }
-
-    .tooltip__text {
-      font-size: var(--fs-300);
-      letter-spacing: var(--letter-spacing-2);
-      color: var(--clr-gray-400);
-      font-weight: var(--fw-light);
-    }
-
-    .tooltip__icons {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .tooltip__link {
-      display: block;
-      color: var(--clr-white);
-      text-decoration: none;
-      padding: 0.3rem 0;
-    }
-
-    .tooltip__link:hover {
-      color: var(--clr-gray-400);
-    }
   </style>
   <div class="tooltip">
-    <div class="tooltip__text">SHARE</div>
-    <div class="tooltip__icons">
-      <a href="#" class="tooltip__link"><img src="/assets/images/icon-facebook.svg" /></a>
-      <a href="#" class="tooltip__link"><img src="/assets/images/icon-twitter.svg" /></a>
-      <a href="#" class="tooltip__link"><img src="/assets/images/icon-pinterest.svg" /></a>
-    </div>
+    <slot name="text"></slot>
+    <slot name="icons"></slot>
   </div>
 `;
 
@@ -109,9 +83,13 @@ class ShareTooltip extends HTMLElement {
   }
 
   toggleVisibility(isActive) {
-    this._active = isActive;
-    const tooltip = this.shadowRoot.querySelector("div");
-    tooltip.classList.toggle("show", this._active);
+    const tooltip = this.shadowRoot.querySelector(".tooltip");
+
+    if (isActive) {
+      tooltip.classList.add("show");
+    } else {
+      tooltip.classList.remove("show");
+    }
   }
 }
 
