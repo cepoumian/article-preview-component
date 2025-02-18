@@ -23,8 +23,8 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 
 ### Links
 
-- Solution Github Repo URL: [Solution repo](https://github.com/cepoumian/social-links-profile)
-- Live Site URL: [Solution live](https://cepo-social-links-profile.netlify.app/)
+- Solution Github Repo URL: [Solution repo](https://github.com/cepoumian/article-preview-component)
+- Live Site URL: [Solution live](https://cepo-article-preview.netlify.app/)
 
 ## My process
 
