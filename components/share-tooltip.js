@@ -3,7 +3,7 @@ const tooltipTemplate = document.createElement("template");
 tooltipTemplate.innerHTML = /* html */ `
   <style>
     .tooltip {
-      --translate-y: -8rem;
+      --translate-y: -7rem;
       --translate-x: -8rem;
       --tooltip-padding-y: var(--spacing-100);
       --tooltip-padding-x: var(--spacing-400);
@@ -40,6 +40,7 @@ tooltipTemplate.innerHTML = /* html */ `
     
     @media (max-width: 761px) {
       .tooltip {
+        --translate-y: -6rem;
         --tooltip-padding-y: var(--spacing-50);
         --tooltip-padding-x: var(--spacing-200);
       }
@@ -51,8 +52,8 @@ tooltipTemplate.innerHTML = /* html */ `
 
     @media (max-width: 600px) {
       .tooltip {
-        --translate-y: -2.6rem;
-        --translate-x: -15.1rem;
+        --translate-y: -2rem;
+        --translate-x: -14.5rem;
       }
 
       .tooltip::after {
