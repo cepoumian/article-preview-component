@@ -22,7 +22,7 @@ template.innerHTML = /* html */ `
     }
   </style>
   <div>
-    <img src="/images/icon-share.svg" />
+    <img src="/assets/images/icon-share.svg" />
   </div>
 `;
 

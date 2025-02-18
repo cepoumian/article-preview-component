@@ -90,9 +90,9 @@ tooltipTemplate.innerHTML = /* html */ `
   <div class="tooltip">
     <div class="tooltip__text">SHARE</div>
     <div class="tooltip__icons">
-      <a href="#" class="tooltip__link"><img src="/images/icon-facebook.svg" /></a>
-      <a href="#" class="tooltip__link"><img src="/images/icon-twitter.svg" /></a>
-      <a href="#" class="tooltip__link"><img src="/images/icon-pinterest.svg" /></a>
+      <a href="#" class="tooltip__link"><img src="/assets/images/icon-facebook.svg" /></a>
+      <a href="#" class="tooltip__link"><img src="/assets/images/icon-twitter.svg" /></a>
+      <a href="#" class="tooltip__link"><img src="/assets/images/icon-pinterest.svg" /></a>
     </div>
   </div>
 `;
