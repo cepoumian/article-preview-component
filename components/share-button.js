@@ -22,8 +22,8 @@ template.innerHTML = /* html */ `
       transform: translateY(-2px);
     }
   </style>
-  <div aria-label="Share button">
-    <img src="/assets/images/icon-share.svg" />
+  <div>
+    <img src="/assets/images/icon-share.svg" alt="Share button"/>
   </div>
 `;
 
