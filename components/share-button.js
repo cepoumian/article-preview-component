@@ -38,11 +38,11 @@ class ShareButton extends HTMLElement {
     this.root.appendChild(template.content.cloneNode(true));
     this.root
       .querySelector("div")
-      .addEventListener("click", () => this._toggleActive());
+      .addEventListener("click", () => this.toggleActive());
     this.tooltip = this.closest(".share")?.querySelector("share-tooltip");
   }
 
-  _toggleActive = () => {
+  toggleActive = () => {
     this._active = !this._active;
     const button = this.root.querySelector("div");
     button.classList.toggle("active", this._active);
